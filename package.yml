@@ -1,0 +1,15 @@
+package: demo_onepage
+version: '1.0'
+author: 'Friends Of REDAXO'
+supportpage: 'https://github.com/FriendsOfREDAXO/demo_onepage'
+page:
+    title: Onepage-Demo
+    perm: 'demo_onepage[]'
+    pjax: true
+    subpages:
+        install: { title: 'translate:title' }
+requires:
+    packages:
+        backup: ^2.2.0
+        structure/content: ^2.5.0
+    redaxo: ^5.5.1

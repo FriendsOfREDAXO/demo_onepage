@@ -1,0 +1,20 @@
+demo_onepage_title = Onepage-Demo
+
+demo_onepage_install = Installation
+demo_onepage_install_heading = Installation
+demo_onepage_install_description = Bitte beachten, dass bei der Installation alle Inhalte der Datenbank gelöscht werden!<br>Die Installation kann etwas dauern, da auch alle benötigten AddOns geladen werden.
+demo_onepage_install_button = Onepage-Demo installieren
+
+demo_onepage_confirm_setup = Bestehende Daten gehen verloren. Fortfahren?
+
+demo_onepage_package_not_available      = Benötigte Version des Pakets <b>"{0}"</b> ist nicht verfügbar!
+demo_onepage_package_not_exists         = Paket <b>"{0}"</b> ist nicht vorhanden!
+demo_onepage_package_failed_to_download = Fehler beim Download von <b>"{0}"</b>!
+demo_onepage_package_failed_to_validate = Fehler bei der Validierung von <b>"{0}"</b>!
+demo_onepage_package_failed_to_extract  = Fehler beim Entpacken von <b>"{0}"</b>!
+demo_onepage_package_failed_to_install  = Fehler beim Installieren von <b>"{0}"</b>!
+demo_onepage_package_failed_to_activate = Fehler beim Aktivieren von <b>"{0}"</b>!
+demo_onepage_package_failed_to_import   = Fehler beim Importieren von <b>"{0}"</b>!
+
+demo_onepage_installation_error         = Demo konnte nicht installiert werden:
+demo_onepage_installation_success       = Demo wurde erfolgreich installiert!

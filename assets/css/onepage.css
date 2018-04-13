@@ -1,0 +1,53 @@
+fieldset.distance {
+	padding-bottom: 50px;
+}
+
+.switcher {
+	background: #324050;
+	color: #fff;
+	padding: 20px 10px 40px;
+	margin: 20px 0;
+}
+.switcher label {
+	line-height: 36px;
+}
+.section-textpic-1 img,
+.section-we-made-3 img,
+.section-header img,
+.project-content img,
+.projects img {
+	width: 100%;
+}
+.project-content .col-md-10 {
+	margin-left: 0;
+	width: 100%;
+}
+
+/*=============================================
+=  TEXT IN SPALTEN
+ =============================================*/
+.column {
+	height: 0;
+	overflow: hidden;
+	margin-bottom: 0;
+}
+.column-visible {
+	height: auto;
+	margin-bottom: 15px;
+}
+.column .form-horizontal {
+	transform: translate3d(-30px, 0, 0);
+	opacity: 0;
+}
+.column-visible .form-horizontal {
+	transform: translate3d(0, 0, 0);
+	opacity: 1;
+	transition: all 400ms ease-out;
+}
+
+/*=============================================
+=            TEXT
+ =============================================*/
+.hide-border .panel {
+	border: none;
+}

@@ -1,0 +1,26 @@
+# additional requires (non-system packages)
+requires:
+    packages:
+        developer: '>=3.7.0'
+        markitup: '>=3.0.3'
+        mblock: '>=2.1.0'
+        be_style/customizer: '>=2.4.0'
+
+# setup config
+# hint: inspect link values inside of REDAXO installer to find out fileIds (numbers) for new packages!
+setup:
+    packages:
+        developer: 2274    # 3.7.0
+        markitup: 2170    # 3.0.3
+        mblock: 2082       # 2.1.0
+    installSequence:
+        - backup
+        - structure/content
+        - developer
+        - markitup
+        - mblock
+        - be_style/customizer
+    dbimport:
+        - demo_onepage.sql
+    fileimport:
+        - demo_onepage.tar.gz
