@@ -1,0 +1,20 @@
+demo_onepage_title = Onepage demo
+
+demo_onepage_install = Installation
+demo_onepage_install_heading = Installation
+demo_onepage_install_description = Observera att allt innehåll i databasen kommer att raderas under installationen! <br> Installationen kan ta lite tid eftersom alla nödvändiga tillägg också laddas.
+demo_onepage_install_button = Installera onepage demo
+
+demo_onepage_confirm_setup = Befintlig data går förlorad. Fortsätt?
+
+demo_onepage_package_not_available      = Erforderlig version av paketet <b> "{0}" </ b> är inte tillgängligt!
+demo_onepage_package_not_exists         = Paketet <b> "{0}" </ b> existerar inte!
+demo_onepage_package_failed_to_download = Fel vid nedladdning av <b> "{0}" </ b>!
+demo_onepage_package_failed_to_validate = Fel med att validera <b> "{0}" </ b>!
+demo_onepage_package_failed_to_extract  = Ett fel uppstod vid uppackning av<b> "{0}" </ b>!
+demo_onepage_package_failed_to_install  = Ett fel uppstod vid installationen av <b> "{0}" </ b>!
+demo_onepage_package_failed_to_activate = Ett fel uppstod vid aktiveringen av <b> "{0}" </ b>!
+demo_onepage_package_failed_to_import   = Ett fel uppstod vid importen av <b> "{0}" </ b>!
+
+demo_onepage_installation_error         = Demon kunde inte installeras
+demo_onepage_installation_success       = Demon installerades!
