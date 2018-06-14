@@ -1,0 +1,20 @@
+demo_onepage_title = Demo OnePage
+
+demo_onepage_install = Instalación
+demo_onepage_install_heading = Instalación
+demo_onepage_install_description = Tenga en cuenta que todos los contenidos de la base de datos se eliminarán durante la instalación.<br>La instalación puede llevar algo de tiempo porque también se cargan todos los complementos necesarios.
+demo_onepage_install_button = Instalar Demo OnePage
+
+demo_onepage_confirm_setup = Se eliminaran los datos existentes. Continuar?
+
+demo_onepage_package_not_available      = La versión requerida del paquete <b>"{0}"</b> no está disponible.
+demo_onepage_package_not_exists         = ¡El paquete <b>"{0}"</b> no existe!
+demo_onepage_package_failed_to_download = Error al descargar <b>"{0}"</b>!
+demo_onepage_package_failed_to_validate = Error al validar <b>"{0}"</b>!
+demo_onepage_package_failed_to_extract  = Error al desempacar <b>"{0}"</ b>!
+demo_onepage_package_failed_to_install  = Error al instalar <b>"{0}"</b>!
+demo_onepage_package_failed_to_activate = Error al activar <b>"{0}"</b>!
+demo_onepage_package_failed_to_import   = Error al importar <b>"{0}"</b>!
+
+demo_onepage_installation_error         = La demostración no pudo ser instalada:
+demo_onepage_installation_success       = ¡Demo fue instalada exitosamente!
