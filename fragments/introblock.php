@@ -1,13 +1,13 @@
 <div class="form-group">
 	<label class="col-sm-2 control-label" for="small-headline">Intro</label>
 	<div class="col-sm-10">
-		<input class="form-control" id="small-headline" type="text" name="REX_INPUT_VALUE[1]" value="<?= htmlspecialchars_decode($this->intro) ?>" />
+		<input class="form-control" id="small-headline" type="text" name="REX_INPUT_VALUE[1]" value="<?= $this->intro ?>" />
 	</div>
 </div>
 <div class="form-group">
 	<label class="col-sm-2 control-label" for="headline">Überschrift</label>
 	<div class="col-sm-10">
-		<input class="form-control" id="headline" type="text" name="REX_INPUT_VALUE[2]" value="<?= htmlspecialchars_decode($this->headline) ?>" />
+		<input class="form-control" id="headline" type="text" name="REX_INPUT_VALUE[2]" value="<?= $this->headline ?>" />
 	</div>
 </div>
 <div class="form-group">

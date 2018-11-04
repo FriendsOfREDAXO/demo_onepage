@@ -2,17 +2,17 @@
 requires:
     packages:
         developer: '>=3.7.0'
-        markitup: '>=3.0.3'
-        mblock: '>=2.1.0'
-        be_style/customizer: '>=2.4.0'
+        markitup: '>=3.2.0'
+        mblock: '>=2.2.3'
+        be_style/customizer: '>=2.5.0'
 
 # setup config
 # hint: inspect link values inside of REDAXO installer to find out fileIds (numbers) for new packages!
 setup:
     packages:
         developer: 2274    # 3.7.0
-        markitup: 2170    # 3.0.3
-        mblock: 2082       # 2.1.0
+        markitup: 2588    # 3.2.0
+        mblock: 2557       # 2.2.3
     installSequence:
         - backup
         - structure/content
