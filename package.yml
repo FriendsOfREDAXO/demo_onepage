@@ -12,24 +12,4 @@ requires:
     packages:
         backup: ^2.2.2
         structure/content: ^2.6.0
-        developer: ^3.7.0
-        markitup: ^3.2.0
-        mblock: ^2.2.3
-        be_style/customizer: ^2.5.0
     redaxo: ^5.6.4
-setup:
-    packages:
-        developer: 2274
-        markitup: 2170
-        mblock: 2082
-    installSequence:
-        - backup
-        - structure/content
-        - developer
-        - markitup
-        - mblock
-        - be_style/customizer
-    dbimport:
-        - demo_onepage.sql
-    fileimport:
-        - demo_onepage.tar.gz
