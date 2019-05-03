@@ -1,6 +1,11 @@
 REDAXO Demo Onepage - Changelog
 ======================
 
+### Version 1.2.3
+
+* Diverse Bugfixes, insb. Fehlerabfragen: #27, #28, #29, #30
+* REDAXO und alle AddOns aktualisiert
+
 ### Version 1.2.2
 
 * Packages in `package.yml` angepasst (#25)

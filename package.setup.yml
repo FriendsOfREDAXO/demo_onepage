@@ -1,18 +1,18 @@
 # additional requires (non-system packages)
 requires:
     packages:
-        developer: '>=3.7.0'
+        developer: '>=3.8.0'
         markitup: '>=3.2.0'
-        mblock: '>=2.2.3'
-        be_style/customizer: '>=2.5.0'
+        mblock: '>=3.1.0'
+        be_style/customizer: '>=2.7.0'
 
 # setup config
 # hint: inspect link values inside of REDAXO installer to find out fileIds (numbers) for new packages!
 setup:
     packages:
-        developer: 2274    # 3.7.0
+        developer: 2654    # 3.8.0
         markitup: 2588     # 3.2.0
-        mblock: 2557       # 2.2.3
+        mblock: 2676       # 3.1.0
     installSequence:
         - backup
         - structure/content
