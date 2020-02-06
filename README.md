@@ -16,4 +16,4 @@ Mittels Kategorie-Metafelder kann man globale Einstellungen vornehmen wie Naviga
 
 ![Screenshot](https://raw.githubusercontent.com/FriendsOfREDAXO/demo_onepage/assets/demo_onepage_02.jpg)
 
-Die Demo ist eher für etwas fortgeschrittene Anwender konzipiert, Einsteiger fangen am besten mit der [Base-Demo](https://redaxo.org/download/addons/demo_base/) an.
+Die Demo ist eher für etwas fortgeschrittene Anwender konzipiert, Einsteiger fangen am besten mit der [Basis-Demo](https://github.com/FriendsOfREDAXO/demo_base/) an.
