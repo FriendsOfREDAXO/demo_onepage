@@ -1,7 +1,7 @@
 REDAXO Demo Onepage - Changelog
 ======================
 
-## Version 1.3.0 – XX.XX.2020
+## Version 1.3.0 – 07.02.2020
 
 ### Features
 
@@ -10,10 +10,7 @@ REDAXO Demo Onepage - Changelog
 * REDAXO-Mindestversion auf 5.9.0 angehoben
 * READMEs nach Sprachen aufgeteilt
 * Support für YRewrite ([#31](https://github.com/FriendsOfREDAXO/demo_onepage/issues/31))
-
-### Bugfixes
-
-* …
+* Update auf MarkItUp 3.3.4
 
 
 ## Version 1.2.3
