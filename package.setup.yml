@@ -21,6 +21,6 @@ setup:
         - mblock
         - be_style/customizer
     dbimport:
-        - demo_onepage.sql
+        - demo_onepage.utf8.sql
     fileimport:
         - demo_onepage.tar.gz
