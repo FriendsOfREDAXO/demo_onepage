@@ -1,5 +1,16 @@
-REDAXO Demo Onepage - Changelog
-======================
+# REDAXO Demo Onepage - Changelog
+
+
+## Version 1.4.0 – 18.03.2020
+
+### Features
+
+* Installation über die Konsole mittels `demo_onepage:install`
+
+### Bugfixes
+
+* Anpassungen für REDAXO 5.10
+
 
 ## Version 1.3.0 – 07.02.2020
 
