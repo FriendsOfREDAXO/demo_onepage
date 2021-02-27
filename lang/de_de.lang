@@ -18,3 +18,5 @@ demo_onepage_package_failed_to_import   = Fehler beim Importieren von <b>"{0}"</
 
 demo_onepage_installation_error         = Demo konnte nicht installiert werden:
 demo_onepage_installation_success       = Demo wurde erfolgreich installiert!
+
+demo_onepage_success_message            = Die Demo kann nun auf der Seite {0} installiert werden.

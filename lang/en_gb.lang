@@ -18,3 +18,5 @@ demo_onepage_package_failed_to_import   = Error imprting <b>"{0}"</b>!
 
 demo_onepage_installation_error         = The demo could no be installed:
 demo_onepage_installation_success       = Demo successfully installed!
+
+demo_onepage_success_message            = The demo can now be installed on the page {0}.

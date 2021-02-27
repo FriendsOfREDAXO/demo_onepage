@@ -18,3 +18,5 @@ demo_onepage_package_failed_to_import   = Ett fel uppstod vid importen av <b> "{
 
 demo_onepage_installation_error         = Demon kunde inte installeras
 demo_onepage_installation_success       = Demon installerades!
+
+demo_onepage_success_message            =
