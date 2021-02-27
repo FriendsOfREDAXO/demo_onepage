@@ -1,6 +1,15 @@
 # REDAXO Demo Onepage - Changelog
 
 
+## Version 1.5.0 – 27.02.2021
+
+### Features
+
+* Hinweis auf die Demo-Seite nach Installation des AddOns ([#32](https://github.com/FriendsOfREDAXO/demo_onepage/issues/32))
+* Mehrsprachige Seitentitel
+* Verwendete AddOns aktualisiert
+
+
 ## Version 1.4.0 – 18.03.2020
 
 ### Features
