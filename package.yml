@@ -1,9 +1,9 @@
 package: demo_onepage
-version: '1.4.0'
+version: 1.4.0
 author: 'Friends Of REDAXO'
 supportpage: 'https://github.com/FriendsOfREDAXO/demo_onepage'
 page:
-    title: Onepage-Demo
+    title: 'translate:demo_onepage_title'
     perm: 'demo_onepage[]'
     pjax: true
     subpages:
