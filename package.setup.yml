@@ -10,8 +10,8 @@ requires:
 # hint: inspect link values inside of REDAXO installer to find out fileIds (numbers) for new packages!
 setup:
     packages:
-        developer: 2654    # 3.8.0
-        markitup: 3037     # 3.3.4
+        developer: 3278    # 3.9.0
+        markitup: 3382     # 3.6.0
         mblock: 2676       # 3.1.0
     installSequence:
         - backup
