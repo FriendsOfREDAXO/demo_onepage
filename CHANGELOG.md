@@ -1,6 +1,13 @@
 # REDAXO Demo Onepage - Changelog
 
 
+## Version 1.5.1 – 06.10.2021
+
+### Bugfixes
+
+* Fehler bei der Installation behoben, wenn zuvor das Developer-AddOn aktiviert war
+
+
 ## Version 1.5.0 – 27.02.2021
 
 ### Features
