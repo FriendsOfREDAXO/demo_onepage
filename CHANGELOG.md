@@ -1,11 +1,13 @@
 # REDAXO Demo Onepage - Changelog
 
 
-## Version 1.6.0 – xx.xx.xxxx
+## Version 1.6.0 – 08.01.2021
 
 ### Features
 
-* …
+* Kompatibilität mit REDAXO 5.13
+* Verwendet die neuen Mediatypen, die mit REDAXO 5.13 eingeführt wurden (z. B. `rex_media_small`)
+* AddOns aktualisiert (MarkItUp, MBlock)
 
 
 ## Version 1.5.1 – 06.10.2021
