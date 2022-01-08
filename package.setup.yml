@@ -4,7 +4,7 @@ requires:
         developer: '^3.8.0'
         markitup: '^3.2.0'
         mblock: '^3.1.0'
-        be_style/customizer: '^2.7.0'
+        be_style/customizer: '>=2.7.0'
 
 # setup config
 # hint: inspect link values inside of REDAXO installer to find out fileIds (numbers) for new packages!
