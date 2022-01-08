@@ -1,6 +1,13 @@
 # REDAXO Demo Onepage - Changelog
 
 
+## Version 1.6.0 – xx.xx.xxxx
+
+### Features
+
+* …
+
+
 ## Version 1.5.1 – 06.10.2021
 
 ### Bugfixes
