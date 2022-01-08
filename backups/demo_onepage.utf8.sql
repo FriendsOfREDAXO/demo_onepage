@@ -6,37 +6,37 @@ SET FOREIGN_KEY_CHECKS = 0;
 
 DROP TABLE IF EXISTS `rex_action`;
 CREATE TABLE `rex_action` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `id` int unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   `preview` text,
   `presave` text,
   `postsave` text,
-  `previewmode` tinyint(4) DEFAULT NULL,
-  `presavemode` tinyint(4) DEFAULT NULL,
-  `postsavemode` tinyint(4) DEFAULT NULL,
+  `previewmode` tinyint DEFAULT NULL,
+  `presavemode` tinyint DEFAULT NULL,
+  `postsavemode` tinyint DEFAULT NULL,
   `createdate` datetime NOT NULL,
-  `revision` int(10) unsigned NOT NULL,
+  `revision` int unsigned NOT NULL,
   `createuser` varchar(255) NOT NULL,
   `updatedate` datetime NOT NULL,
   `updateuser` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 DROP TABLE IF EXISTS `rex_article`;
 CREATE TABLE `rex_article` (
-  `pid` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `id` int(10) unsigned NOT NULL,
-  `parent_id` int(10) unsigned NOT NULL,
+  `pid` int unsigned NOT NULL AUTO_INCREMENT,
+  `id` int unsigned NOT NULL,
+  `parent_id` int unsigned NOT NULL,
   `name` varchar(255) NOT NULL,
   `catname` varchar(255) NOT NULL,
-  `catpriority` int(10) unsigned NOT NULL,
+  `catpriority` int unsigned NOT NULL,
   `startarticle` tinyint(1) NOT NULL,
-  `priority` int(10) unsigned NOT NULL,
+  `priority` int unsigned NOT NULL,
   `path` varchar(255) NOT NULL,
   `status` tinyint(1) NOT NULL,
-  `template_id` int(10) unsigned NOT NULL,
-  `clang_id` int(10) unsigned NOT NULL,
+  `template_id` int unsigned NOT NULL,
+  `clang_id` int unsigned NOT NULL,
   `createdate` datetime NOT NULL,
-  `revision` int(10) unsigned NOT NULL,
+  `revision` int unsigned NOT NULL,
   `createuser` varchar(255) NOT NULL,
   `updatedate` datetime NOT NULL,
   `updateuser` varchar(255) NOT NULL,
@@ -49,7 +49,7 @@ CREATE TABLE `rex_article` (
   KEY `id` (`id`),
   KEY `clang_id` (`clang_id`),
   KEY `parent_id` (`parent_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8mb3;
 
 LOCK TABLES `rex_article` WRITE;
 /*!40000 ALTER TABLE `rex_article` DISABLE KEYS */;
@@ -84,13 +84,13 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `rex_article_slice`;
 CREATE TABLE `rex_article_slice` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `article_id` int(10) unsigned NOT NULL,
-  `clang_id` int(10) unsigned NOT NULL,
-  `ctype_id` int(10) unsigned NOT NULL,
-  `module_id` int(10) unsigned NOT NULL,
-  `revision` int(11) NOT NULL,
-  `priority` int(10) unsigned NOT NULL,
+  `id` int unsigned NOT NULL AUTO_INCREMENT,
+  `article_id` int unsigned NOT NULL,
+  `clang_id` int unsigned NOT NULL,
+  `ctype_id` int unsigned NOT NULL,
+  `module_id` int unsigned NOT NULL,
+  `revision` int NOT NULL,
+  `priority` int unsigned NOT NULL,
   `status` tinyint(1) NOT NULL DEFAULT '1',
   `value1` mediumtext,
   `value2` mediumtext,
@@ -161,7 +161,7 @@ CREATE TABLE `rex_article_slice` (
   KEY `clang_id` (`clang_id`),
   KEY `article_id` (`article_id`),
   KEY `find_slices` (`clang_id`,`article_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=81 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=81 DEFAULT CHARSET=utf8mb3;
 
 LOCK TABLES `rex_article_slice` WRITE;
 /*!40000 ALTER TABLE `rex_article_slice` DISABLE KEYS */;
@@ -242,17 +242,17 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `rex_clang`;
 CREATE TABLE `rex_clang` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `id` int unsigned NOT NULL AUTO_INCREMENT,
   `code` varchar(255) NOT NULL,
   `name` varchar(255) NOT NULL,
-  `priority` int(10) unsigned NOT NULL,
+  `priority` int unsigned NOT NULL,
   `status` tinyint(1) NOT NULL,
-  `revision` int(10) unsigned NOT NULL,
+  `revision` int unsigned NOT NULL,
   `clang_facebook` text,
   `clang_twitter` text,
   `clang_slack` text,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb3;
 
 LOCK TABLES `rex_clang` WRITE;
 /*!40000 ALTER TABLE `rex_clang` DISABLE KEYS */;
@@ -267,7 +267,7 @@ CREATE TABLE `rex_config` (
   `key` varchar(255) NOT NULL,
   `value` text NOT NULL,
   PRIMARY KEY (`namespace`,`key`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 
 LOCK TABLES `rex_config` WRITE;
 /*!40000 ALTER TABLE `rex_config` DISABLE KEYS */;
@@ -303,16 +303,16 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `rex_markitup_profiles`;
 CREATE TABLE `rex_markitup_profiles` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `id` int unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(30) NOT NULL DEFAULT '',
   `description` varchar(255) NOT NULL DEFAULT '',
   `urltype` varchar(50) NOT NULL,
-  `minheight` smallint(5) unsigned NOT NULL,
-  `maxheight` smallint(5) unsigned NOT NULL,
+  `minheight` smallint unsigned NOT NULL,
+  `maxheight` smallint unsigned NOT NULL,
   `type` varchar(50) NOT NULL,
   `markitup_buttons` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb3;
 
 LOCK TABLES `rex_markitup_profiles` WRITE;
 /*!40000 ALTER TABLE `rex_markitup_profiles` DISABLE KEYS */;
@@ -324,17 +324,17 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `rex_markitup_snippets`;
 CREATE TABLE `rex_markitup_snippets` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `id` int unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(30) NOT NULL,
   `lang` varchar(30) NOT NULL,
   `description` text NOT NULL,
   `content` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 DROP TABLE IF EXISTS `rex_mblock_rexform_demo`;
 CREATE TABLE `rex_mblock_rexform_demo` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `status` int(1) DEFAULT '1',
+  `id` int NOT NULL AUTO_INCREMENT,
+  `status` int DEFAULT '1',
   `name` text NOT NULL,
   `mblock_field` text NOT NULL,
   `createdate` datetime DEFAULT NULL,
@@ -342,21 +342,21 @@ CREATE TABLE `rex_mblock_rexform_demo` (
   `createuser` varchar(255) NOT NULL,
   `updateuser` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb3;
 DROP TABLE IF EXISTS `rex_media`;
 CREATE TABLE `rex_media` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `category_id` int(10) unsigned NOT NULL,
+  `id` int unsigned NOT NULL AUTO_INCREMENT,
+  `category_id` int unsigned NOT NULL,
   `attributes` text,
   `filetype` varchar(255) DEFAULT NULL,
   `filename` varchar(255) DEFAULT NULL,
   `originalname` varchar(255) DEFAULT NULL,
   `filesize` varchar(255) DEFAULT NULL,
-  `width` int(10) unsigned DEFAULT NULL,
-  `height` int(10) unsigned DEFAULT NULL,
+  `width` int unsigned DEFAULT NULL,
+  `height` int unsigned DEFAULT NULL,
   `title` varchar(255) DEFAULT NULL,
   `createdate` datetime NOT NULL,
-  `revision` int(10) unsigned NOT NULL,
+  `revision` int unsigned NOT NULL,
   `createuser` varchar(255) NOT NULL,
   `updatedate` datetime NOT NULL,
   `updateuser` varchar(255) NOT NULL,
@@ -366,7 +366,7 @@ CREATE TABLE `rex_media` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `filename` (`filename`),
   KEY `category_id` (`category_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=52 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=52 DEFAULT CHARSET=utf8mb3;
 
 LOCK TABLES `rex_media` WRITE;
 /*!40000 ALTER TABLE `rex_media` DISABLE KEYS */;
@@ -426,19 +426,19 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `rex_media_category`;
 CREATE TABLE `rex_media_category` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `id` int unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
-  `parent_id` int(10) unsigned NOT NULL,
+  `parent_id` int unsigned NOT NULL,
   `path` varchar(255) NOT NULL,
   `createdate` datetime NOT NULL,
   `attributes` text,
-  `revision` int(10) unsigned NOT NULL,
+  `revision` int unsigned NOT NULL,
   `createuser` varchar(255) NOT NULL,
   `updatedate` datetime NOT NULL,
   `updateuser` varchar(255) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `parent_id` (`parent_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb3;
 
 LOCK TABLES `rex_media_category` WRITE;
 /*!40000 ALTER TABLE `rex_media_category` DISABLE KEYS */;
@@ -456,8 +456,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `rex_media_manager_type`;
 CREATE TABLE `rex_media_manager_type` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `status` int(10) unsigned NOT NULL,
+  `id` int unsigned NOT NULL AUTO_INCREMENT,
+  `status` int unsigned NOT NULL,
   `name` varchar(255) NOT NULL,
   `description` varchar(255) NOT NULL,
   `createdate` datetime NOT NULL,
@@ -466,7 +466,7 @@ CREATE TABLE `rex_media_manager_type` (
   `updateuser` varchar(255) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `name` (`name`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb3;
 
 LOCK TABLES `rex_media_manager_type` WRITE;
 /*!40000 ALTER TABLE `rex_media_manager_type` DISABLE KEYS */;
@@ -485,17 +485,17 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `rex_media_manager_type_effect`;
 CREATE TABLE `rex_media_manager_type_effect` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `type_id` int(10) unsigned NOT NULL,
+  `id` int unsigned NOT NULL AUTO_INCREMENT,
+  `type_id` int unsigned NOT NULL,
   `effect` varchar(255) NOT NULL,
   `parameters` text NOT NULL,
-  `priority` int(10) unsigned NOT NULL,
+  `priority` int unsigned NOT NULL,
   `createdate` datetime NOT NULL,
   `createuser` varchar(255) NOT NULL,
   `updatedate` datetime NOT NULL,
   `updateuser` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb3;
 
 LOCK TABLES `rex_media_manager_type_effect` WRITE;
 /*!40000 ALTER TABLE `rex_media_manager_type_effect` DISABLE KEYS */;
@@ -519,12 +519,12 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `rex_metainfo_field`;
 CREATE TABLE `rex_metainfo_field` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `id` int unsigned NOT NULL AUTO_INCREMENT,
   `title` varchar(255) DEFAULT NULL,
   `name` varchar(255) DEFAULT NULL,
-  `priority` int(10) unsigned NOT NULL,
+  `priority` int unsigned NOT NULL,
   `attributes` text NOT NULL,
-  `type_id` int(10) unsigned DEFAULT NULL,
+  `type_id` int unsigned DEFAULT NULL,
   `default` varchar(255) NOT NULL,
   `params` text,
   `validate` text,
@@ -537,7 +537,7 @@ CREATE TABLE `rex_metainfo_field` (
   `updateuser` varchar(255) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `name` (`name`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb3;
 
 LOCK TABLES `rex_metainfo_field` WRITE;
 /*!40000 ALTER TABLE `rex_metainfo_field` DISABLE KEYS */;
@@ -557,12 +557,12 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `rex_metainfo_type`;
 CREATE TABLE `rex_metainfo_type` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `id` int unsigned NOT NULL AUTO_INCREMENT,
   `label` varchar(255) DEFAULT NULL,
   `dbtype` varchar(255) NOT NULL,
-  `dblength` int(11) NOT NULL,
+  `dblength` int NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb3;
 
 LOCK TABLES `rex_metainfo_type` WRITE;
 /*!40000 ALTER TABLE `rex_metainfo_type` DISABLE KEYS */;
@@ -585,7 +585,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `rex_module`;
 CREATE TABLE `rex_module` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `id` int unsigned NOT NULL AUTO_INCREMENT,
   `key` varchar(191) DEFAULT NULL,
   `name` varchar(255) NOT NULL,
   `output` mediumtext NOT NULL,
@@ -595,10 +595,10 @@ CREATE TABLE `rex_module` (
   `updatedate` datetime NOT NULL,
   `updateuser` varchar(255) NOT NULL,
   `attributes` text,
-  `revision` int(10) unsigned NOT NULL,
+  `revision` int unsigned NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `key` (`key`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb3;
 
 LOCK TABLES `rex_module` WRITE;
 /*!40000 ALTER TABLE `rex_module` DISABLE KEYS */;
@@ -620,28 +620,28 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `rex_module_action`;
 CREATE TABLE `rex_module_action` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `module_id` int(10) unsigned NOT NULL,
-  `action_id` int(10) unsigned NOT NULL,
-  `revision` int(10) unsigned NOT NULL,
+  `id` int unsigned NOT NULL AUTO_INCREMENT,
+  `module_id` int unsigned NOT NULL,
+  `action_id` int unsigned NOT NULL,
+  `revision` int unsigned NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 DROP TABLE IF EXISTS `rex_template`;
 CREATE TABLE `rex_template` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `id` int unsigned NOT NULL AUTO_INCREMENT,
   `key` varchar(191) DEFAULT NULL,
   `name` varchar(255) DEFAULT NULL,
   `content` mediumtext,
   `active` tinyint(1) DEFAULT NULL,
   `createdate` datetime NOT NULL,
   `attributes` text,
-  `revision` int(11) NOT NULL,
+  `revision` int NOT NULL,
   `createuser` varchar(255) NOT NULL,
   `updatedate` datetime NOT NULL,
   `updateuser` varchar(255) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `key` (`key`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb3;
 
 LOCK TABLES `rex_template` WRITE;
 /*!40000 ALTER TABLE `rex_template` DISABLE KEYS */;
@@ -659,15 +659,15 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `rex_user_role`;
 CREATE TABLE `rex_user_role` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `id` int unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) DEFAULT NULL,
   `description` text,
   `perms` text NOT NULL,
   `createdate` datetime NOT NULL,
-  `revision` int(10) unsigned NOT NULL,
+  `revision` int unsigned NOT NULL,
   `createuser` varchar(255) NOT NULL,
   `updatedate` datetime NOT NULL,
   `updateuser` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 SET FOREIGN_KEY_CHECKS = 1;
