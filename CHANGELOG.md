@@ -1,7 +1,15 @@
 # REDAXO Demo Onepage - Changelog
 
 
-## Version 1.6.0 – 08.01.2021
+## Version 1.7.0 – 13.12.2022
+
+### Features
+
+* Anzeige der Dokumentation mit Inhaltsangabe
+* Verwendete AddOns aktualisiert zwecks Kompatibilität mit PHP 8.2
+
+
+## Version 1.6.0 – 08.01.2022
 
 ### Features
 
