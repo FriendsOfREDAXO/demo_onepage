@@ -273,6 +273,11 @@ LOCK TABLES `rex_config` WRITE;
 /*!40000 ALTER TABLE `rex_config` DISABLE KEYS */;
 INSERT INTO `rex_config` VALUES 
   ('be_style/customizer','codemirror','1'),
+  ('be_style/customizer','codemirror-langs','0'),
+  ('be_style/customizer','codemirror-options','\"\"'),
+  ('be_style/customizer','codemirror-selectors','\"\"'),
+  ('be_style/customizer','codemirror-tools','0'),
+  ('be_style/customizer','codemirror_darktheme','\"dracula\"'),
   ('be_style/customizer','codemirror_theme','\"eclipse\"'),
   ('be_style/customizer','labelcolor','\"#43a047\"'),
   ('be_style/customizer','showlink','1'),
