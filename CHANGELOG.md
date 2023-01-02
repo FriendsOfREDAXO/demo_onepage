@@ -1,6 +1,13 @@
 # REDAXO Demo Onepage - Changelog
 
 
+## Version 1.7.1 – 02.01.2023
+
+### Bugfixes
+
+* Verwendete AddOns aktualisiert
+
+
 ## Version 1.7.0 – 13.12.2022
 
 ### Features
