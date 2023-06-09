@@ -1,5 +1,19 @@
 # REDAXO Demo Onepage - Changelog
 
+## Version 1.7.3 – 10.06.2023
+
+### Features
+
+* Neue Versionen der benötigten AddOns in package.setup.yml @aeberhard
+  * markitup 3.7.3 -> 3.7.4
+  * mblock 3.4.7 -> 3.4.12
+* PHP-Version in package.yml >=7.4, <8.3
+ 
+### Bugfixes
+
+* Bei Deinstallation Backup-Daten aus dem Backup-Ordner löschen - https://github.com/FriendsOfREDAXO/demo_onepage/issues/38 @aeberhard
+* Fontawesome war im Header-Template noch mit http verlinkt und es wurden unter https keine Fontawesome-Icons angezeigt, link geändert auf https
+
 
 ## Version 1.7.2 – 02.01.2023
 
