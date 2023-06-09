@@ -11,8 +11,8 @@ requires:
 setup:
     packages:
         developer: 4706    # 3.9.2
-        markitup: 4525     # 3.7.3
-        mblock: 4499       # 3.4.7
+        markitup: 4864     # 3.7.4
+        mblock: 4855       # 3.4.12
     installSequence:
         - backup
         - structure/content
