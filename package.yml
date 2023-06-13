@@ -24,3 +24,5 @@ requires:
         version: '>=7.4, <8.3'
 console_commands:
     'demo_onepage:install': rex_command_demo_onepage_install
+    'demo_onepage:dump_files': rex_command_demo_onepage_dumpfiles
+    'demo_onepage:dump_tables': rex_command_demo_onepage_dumptables
