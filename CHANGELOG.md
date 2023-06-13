@@ -2,6 +2,8 @@
 
 ## Version 1.8.0 – 14.06.2023
 
+### Neu
+
 * Neue Console-Commands zur Erstellung der Demo-Exporte @aeberhard
   * `demo_onepage:dump_tables`, erstellt Datenbank-Backup `backups/demo_onepage.utf8.sql`
   * beim Datenbank-Backup werden nur die benötigten Tabellen exportiert
