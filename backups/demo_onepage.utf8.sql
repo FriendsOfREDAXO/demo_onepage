@@ -4,52 +4,35 @@
 
 SET FOREIGN_KEY_CHECKS = 0;
 
-DROP TABLE IF EXISTS `rex_action`;
-CREATE TABLE `rex_action` (
-  `id` int unsigned NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) NOT NULL,
-  `preview` text,
-  `presave` text,
-  `postsave` text,
-  `previewmode` tinyint DEFAULT NULL,
-  `presavemode` tinyint DEFAULT NULL,
-  `postsavemode` tinyint DEFAULT NULL,
-  `createdate` datetime NOT NULL,
-  `revision` int unsigned NOT NULL,
-  `createuser` varchar(255) NOT NULL,
-  `updatedate` datetime NOT NULL,
-  `updateuser` varchar(255) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 DROP TABLE IF EXISTS `rex_article`;
 CREATE TABLE `rex_article` (
-  `pid` int unsigned NOT NULL AUTO_INCREMENT,
-  `id` int unsigned NOT NULL,
-  `parent_id` int unsigned NOT NULL,
+  `pid` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `id` int(10) unsigned NOT NULL,
+  `parent_id` int(10) unsigned NOT NULL,
   `name` varchar(255) NOT NULL,
   `catname` varchar(255) NOT NULL,
-  `catpriority` int unsigned NOT NULL,
+  `catpriority` int(10) unsigned NOT NULL,
   `startarticle` tinyint(1) NOT NULL,
-  `priority` int unsigned NOT NULL,
+  `priority` int(10) unsigned NOT NULL,
   `path` varchar(255) NOT NULL,
   `status` tinyint(1) NOT NULL,
-  `template_id` int unsigned NOT NULL,
-  `clang_id` int unsigned NOT NULL,
+  `template_id` int(10) unsigned NOT NULL,
+  `clang_id` int(10) unsigned NOT NULL,
   `createdate` datetime NOT NULL,
-  `revision` int unsigned NOT NULL,
+  `revision` int(10) unsigned NOT NULL,
   `createuser` varchar(255) NOT NULL,
   `updatedate` datetime NOT NULL,
   `updateuser` varchar(255) NOT NULL,
   `cat_navigation` varchar(255) DEFAULT '',
   `cat_color` varchar(255) DEFAULT '',
-  `cat_sep_char` text,
+  `cat_sep_char` text DEFAULT NULL,
   `cat_preloader` varchar(255) DEFAULT '',
   PRIMARY KEY (`pid`),
   UNIQUE KEY `find_articles` (`id`,`clang_id`),
   KEY `id` (`id`),
   KEY `clang_id` (`clang_id`),
   KEY `parent_id` (`parent_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8;
 
 LOCK TABLES `rex_article` WRITE;
 /*!40000 ALTER TABLE `rex_article` DISABLE KEYS */;
@@ -84,34 +67,34 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `rex_article_slice`;
 CREATE TABLE `rex_article_slice` (
-  `id` int unsigned NOT NULL AUTO_INCREMENT,
-  `article_id` int unsigned NOT NULL,
-  `clang_id` int unsigned NOT NULL,
-  `ctype_id` int unsigned NOT NULL,
-  `module_id` int unsigned NOT NULL,
-  `revision` int NOT NULL,
-  `priority` int unsigned NOT NULL,
-  `status` tinyint(1) NOT NULL DEFAULT '1',
-  `value1` mediumtext,
-  `value2` mediumtext,
-  `value3` mediumtext,
-  `value4` mediumtext,
-  `value5` mediumtext,
-  `value6` mediumtext,
-  `value7` mediumtext,
-  `value8` mediumtext,
-  `value9` mediumtext,
-  `value10` mediumtext,
-  `value11` mediumtext,
-  `value12` mediumtext,
-  `value13` mediumtext,
-  `value14` mediumtext,
-  `value15` mediumtext,
-  `value16` mediumtext,
-  `value17` mediumtext,
-  `value18` mediumtext,
-  `value19` mediumtext,
-  `value20` mediumtext,
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `article_id` int(10) unsigned NOT NULL,
+  `clang_id` int(10) unsigned NOT NULL,
+  `ctype_id` int(10) unsigned NOT NULL,
+  `module_id` int(10) unsigned NOT NULL,
+  `revision` int(11) NOT NULL,
+  `priority` int(10) unsigned NOT NULL,
+  `status` tinyint(1) NOT NULL DEFAULT 1,
+  `value1` mediumtext DEFAULT NULL,
+  `value2` mediumtext DEFAULT NULL,
+  `value3` mediumtext DEFAULT NULL,
+  `value4` mediumtext DEFAULT NULL,
+  `value5` mediumtext DEFAULT NULL,
+  `value6` mediumtext DEFAULT NULL,
+  `value7` mediumtext DEFAULT NULL,
+  `value8` mediumtext DEFAULT NULL,
+  `value9` mediumtext DEFAULT NULL,
+  `value10` mediumtext DEFAULT NULL,
+  `value11` mediumtext DEFAULT NULL,
+  `value12` mediumtext DEFAULT NULL,
+  `value13` mediumtext DEFAULT NULL,
+  `value14` mediumtext DEFAULT NULL,
+  `value15` mediumtext DEFAULT NULL,
+  `value16` mediumtext DEFAULT NULL,
+  `value17` mediumtext DEFAULT NULL,
+  `value18` mediumtext DEFAULT NULL,
+  `value19` mediumtext DEFAULT NULL,
+  `value20` mediumtext DEFAULT NULL,
   `media1` varchar(255) DEFAULT NULL,
   `media2` varchar(255) DEFAULT NULL,
   `media3` varchar(255) DEFAULT NULL,
@@ -122,16 +105,16 @@ CREATE TABLE `rex_article_slice` (
   `media8` varchar(255) DEFAULT NULL,
   `media9` varchar(255) DEFAULT NULL,
   `media10` varchar(255) DEFAULT NULL,
-  `medialist1` text,
-  `medialist2` text,
-  `medialist3` text,
-  `medialist4` text,
-  `medialist5` text,
-  `medialist6` text,
-  `medialist7` text,
-  `medialist8` text,
-  `medialist9` text,
-  `medialist10` text,
+  `medialist1` text DEFAULT NULL,
+  `medialist2` text DEFAULT NULL,
+  `medialist3` text DEFAULT NULL,
+  `medialist4` text DEFAULT NULL,
+  `medialist5` text DEFAULT NULL,
+  `medialist6` text DEFAULT NULL,
+  `medialist7` text DEFAULT NULL,
+  `medialist8` text DEFAULT NULL,
+  `medialist9` text DEFAULT NULL,
+  `medialist10` text DEFAULT NULL,
   `link1` varchar(10) DEFAULT NULL,
   `link2` varchar(10) DEFAULT NULL,
   `link3` varchar(10) DEFAULT NULL,
@@ -142,16 +125,16 @@ CREATE TABLE `rex_article_slice` (
   `link8` varchar(10) DEFAULT NULL,
   `link9` varchar(10) DEFAULT NULL,
   `link10` varchar(10) DEFAULT NULL,
-  `linklist1` text,
-  `linklist2` text,
-  `linklist3` text,
-  `linklist4` text,
-  `linklist5` text,
-  `linklist6` text,
-  `linklist7` text,
-  `linklist8` text,
-  `linklist9` text,
-  `linklist10` text,
+  `linklist1` text DEFAULT NULL,
+  `linklist2` text DEFAULT NULL,
+  `linklist3` text DEFAULT NULL,
+  `linklist4` text DEFAULT NULL,
+  `linklist5` text DEFAULT NULL,
+  `linklist6` text DEFAULT NULL,
+  `linklist7` text DEFAULT NULL,
+  `linklist8` text DEFAULT NULL,
+  `linklist9` text DEFAULT NULL,
+  `linklist10` text DEFAULT NULL,
   `createdate` datetime NOT NULL,
   `createuser` varchar(255) NOT NULL,
   `updatedate` datetime NOT NULL,
@@ -161,7 +144,7 @@ CREATE TABLE `rex_article_slice` (
   KEY `clang_id` (`clang_id`),
   KEY `article_id` (`article_id`),
   KEY `find_slices` (`clang_id`,`article_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=81 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=81 DEFAULT CHARSET=utf8;
 
 LOCK TABLES `rex_article_slice` WRITE;
 /*!40000 ALTER TABLE `rex_article_slice` DISABLE KEYS */;
@@ -242,17 +225,17 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `rex_clang`;
 CREATE TABLE `rex_clang` (
-  `id` int unsigned NOT NULL AUTO_INCREMENT,
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `code` varchar(255) NOT NULL,
   `name` varchar(255) NOT NULL,
-  `priority` int unsigned NOT NULL,
+  `priority` int(10) unsigned NOT NULL,
   `status` tinyint(1) NOT NULL,
-  `revision` int unsigned NOT NULL,
-  `clang_facebook` text,
-  `clang_twitter` text,
-  `clang_slack` text,
+  `revision` int(10) unsigned NOT NULL,
+  `clang_facebook` text DEFAULT NULL,
+  `clang_twitter` text DEFAULT NULL,
+  `clang_slack` text DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 LOCK TABLES `rex_clang` WRITE;
 /*!40000 ALTER TABLE `rex_clang` DISABLE KEYS */;
@@ -267,7 +250,7 @@ CREATE TABLE `rex_config` (
   `key` varchar(255) NOT NULL,
   `value` text NOT NULL,
   PRIMARY KEY (`namespace`,`key`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 LOCK TABLES `rex_config` WRITE;
 /*!40000 ALTER TABLE `rex_config` DISABLE KEYS */;
@@ -281,13 +264,13 @@ INSERT INTO `rex_config` VALUES
   ('be_style/customizer','codemirror_theme','\"eclipse\"'),
   ('be_style/customizer','labelcolor','\"#43a047\"'),
   ('be_style/customizer','showlink','1'),
-  ('core','package-config','{\"backup\":{\"install\":true,\"status\":true},\"be_style\":{\"install\":true,\"status\":true,\"plugins\":{\"customizer\":{\"install\":true,\"status\":true},\"redaxo\":{\"install\":true,\"status\":true}}},\"cronjob\":{\"install\":false,\"status\":false,\"plugins\":{\"article_status\":{\"install\":false,\"status\":false},\"optimize_tables\":{\"install\":false,\"status\":false}}},\"debug\":{\"install\":false,\"status\":false},\"demo_onepage\":{\"install\":true,\"status\":true},\"developer\":{\"install\":true,\"status\":true},\"install\":{\"install\":true,\"status\":true},\"markitup\":{\"install\":true,\"status\":true,\"plugins\":{\"documentation\":{\"install\":false,\"status\":false}}},\"mblock\":{\"install\":true,\"status\":true},\"media_manager\":{\"install\":true,\"status\":true},\"mediapool\":{\"install\":true,\"status\":true},\"metainfo\":{\"install\":true,\"status\":true},\"phpmailer\":{\"install\":false,\"status\":false},\"project\":{\"install\":true,\"status\":true},\"structure\":{\"install\":true,\"status\":true,\"plugins\":{\"content\":{\"install\":true,\"status\":true},\"history\":{\"install\":false,\"status\":false},\"version\":{\"install\":false,\"status\":false}}},\"users\":{\"install\":true,\"status\":true}}'),
+  ('core','package-config','{\"backup\":{\"install\":true,\"status\":true},\"be_style\":{\"install\":true,\"status\":true,\"plugins\":{\"customizer\":{\"install\":true,\"status\":true},\"redaxo\":{\"install\":true,\"status\":true}}},\"cronjob\":{\"install\":false,\"status\":false,\"plugins\":{\"article_status\":{\"install\":false,\"status\":false},\"optimize_tables\":{\"install\":false,\"status\":false}}},\"debug\":{\"install\":false,\"status\":false},\"demo_base\":{\"install\":false,\"status\":false},\"demo_community\":{\"install\":false,\"status\":false},\"demo_fullpage\":{\"install\":false,\"status\":false},\"demo_onepage\":{\"install\":true,\"status\":true},\"developer\":{\"install\":true,\"status\":true},\"install\":{\"install\":true,\"status\":true},\"markitup\":{\"install\":true,\"status\":true,\"plugins\":{\"documentation\":{\"install\":false,\"status\":false}}},\"mblock\":{\"install\":true,\"status\":true},\"media_manager\":{\"install\":true,\"status\":true},\"mediapool\":{\"install\":true,\"status\":true},\"metainfo\":{\"install\":true,\"status\":true},\"phpmailer\":{\"install\":false,\"status\":false},\"project\":{\"install\":true,\"status\":true},\"structure\":{\"install\":true,\"status\":true,\"plugins\":{\"content\":{\"install\":true,\"status\":true},\"history\":{\"install\":false,\"status\":false},\"version\":{\"install\":false,\"status\":false}}},\"users\":{\"install\":true,\"status\":true}}'),
   ('core','package-order','[\"be_style\",\"be_style\\/customizer\",\"be_style\\/redaxo\",\"users\",\"backup\",\"developer\",\"install\",\"markitup\",\"mblock\",\"media_manager\",\"mediapool\",\"structure\",\"metainfo\",\"structure\\/content\",\"demo_onepage\",\"project\"]'),
   ('core','version','\"5.10.0\"'),
   ('developer','actions','true'),
   ('developer','delete','true'),
   ('developer','dir_suffix','false'),
-  ('developer','items','{\"templates\":{\"1\":1522907079,\"2\":1556879598,\"3\":1581111390,\"4\":1581110135,\"5\":1522907082,\"6\":1522907083,\"7\":1522907084,\"8\":1556879567},\"modules\":{\"1\":1556878397,\"2\":1556879749,\"3\":1556879762,\"4\":1556885796,\"5\":1523465207,\"6\":1523450408,\"7\":1523720428,\"8\":1523465807,\"9\":1523465269,\"10\":1523458679,\"11\":1523458615,\"12\":1522907077}}'),
+  ('developer','items','{\"templates\":{\"1\":1522903479,\"2\":1556875998,\"3\":1581107790,\"4\":1581106535,\"5\":1522903482,\"6\":1522903483,\"7\":1522903484,\"8\":1556875967},\"modules\":{\"1\":1556874797,\"2\":1556876149,\"3\":1556876162,\"4\":1556882196,\"5\":1523461607,\"6\":1523446808,\"7\":1523716828,\"8\":1523462207,\"9\":1523461669,\"10\":1523455079,\"11\":1523455015,\"12\":1522903477}}'),
   ('developer','modules','true'),
   ('developer','prefix','true'),
   ('developer','rename','true'),
@@ -308,16 +291,16 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `rex_markitup_profiles`;
 CREATE TABLE `rex_markitup_profiles` (
-  `id` int unsigned NOT NULL AUTO_INCREMENT,
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(30) NOT NULL DEFAULT '',
   `description` varchar(255) NOT NULL DEFAULT '',
   `urltype` varchar(50) NOT NULL,
-  `minheight` smallint unsigned NOT NULL,
-  `maxheight` smallint unsigned NOT NULL,
+  `minheight` smallint(5) unsigned NOT NULL,
+  `maxheight` smallint(5) unsigned NOT NULL,
   `type` varchar(50) NOT NULL,
   `markitup_buttons` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 LOCK TABLES `rex_markitup_profiles` WRITE;
 /*!40000 ALTER TABLE `rex_markitup_profiles` DISABLE KEYS */;
@@ -327,51 +310,30 @@ INSERT INTO `rex_markitup_profiles` VALUES
 /*!40000 ALTER TABLE `rex_markitup_profiles` ENABLE KEYS */;
 UNLOCK TABLES;
 
-DROP TABLE IF EXISTS `rex_markitup_snippets`;
-CREATE TABLE `rex_markitup_snippets` (
-  `id` int unsigned NOT NULL AUTO_INCREMENT,
-  `name` varchar(30) NOT NULL,
-  `lang` varchar(30) NOT NULL,
-  `description` text NOT NULL,
-  `content` text NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
-DROP TABLE IF EXISTS `rex_mblock_rexform_demo`;
-CREATE TABLE `rex_mblock_rexform_demo` (
-  `id` int NOT NULL AUTO_INCREMENT,
-  `status` int DEFAULT '1',
-  `name` text NOT NULL,
-  `mblock_field` text NOT NULL,
-  `createdate` datetime DEFAULT NULL,
-  `updatedate` datetime DEFAULT NULL,
-  `createuser` varchar(255) NOT NULL,
-  `updateuser` varchar(255) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb3;
 DROP TABLE IF EXISTS `rex_media`;
 CREATE TABLE `rex_media` (
-  `id` int unsigned NOT NULL AUTO_INCREMENT,
-  `category_id` int unsigned NOT NULL,
-  `attributes` text,
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `category_id` int(10) unsigned NOT NULL,
+  `attributes` text DEFAULT NULL,
   `filetype` varchar(255) DEFAULT NULL,
   `filename` varchar(255) DEFAULT NULL,
   `originalname` varchar(255) DEFAULT NULL,
   `filesize` varchar(255) DEFAULT NULL,
-  `width` int unsigned DEFAULT NULL,
-  `height` int unsigned DEFAULT NULL,
+  `width` int(10) unsigned DEFAULT NULL,
+  `height` int(10) unsigned DEFAULT NULL,
   `title` varchar(255) DEFAULT NULL,
   `createdate` datetime NOT NULL,
-  `revision` int unsigned NOT NULL,
+  `revision` int(10) unsigned NOT NULL,
   `createuser` varchar(255) NOT NULL,
   `updatedate` datetime NOT NULL,
   `updateuser` varchar(255) NOT NULL,
-  `med_position` text,
-  `med_link` text,
+  `med_position` text DEFAULT NULL,
+  `med_link` text DEFAULT NULL,
   `med_hover` varchar(255) DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE KEY `filename` (`filename`),
   KEY `category_id` (`category_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=52 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=52 DEFAULT CHARSET=utf8;
 
 LOCK TABLES `rex_media` WRITE;
 /*!40000 ALTER TABLE `rex_media` DISABLE KEYS */;
@@ -431,19 +393,19 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `rex_media_category`;
 CREATE TABLE `rex_media_category` (
-  `id` int unsigned NOT NULL AUTO_INCREMENT,
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
-  `parent_id` int unsigned NOT NULL,
+  `parent_id` int(10) unsigned NOT NULL,
   `path` varchar(255) NOT NULL,
   `createdate` datetime NOT NULL,
-  `attributes` text,
-  `revision` int unsigned NOT NULL,
+  `attributes` text DEFAULT NULL,
+  `revision` int(10) unsigned NOT NULL,
   `createuser` varchar(255) NOT NULL,
   `updatedate` datetime NOT NULL,
   `updateuser` varchar(255) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `parent_id` (`parent_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 
 LOCK TABLES `rex_media_category` WRITE;
 /*!40000 ALTER TABLE `rex_media_category` DISABLE KEYS */;
@@ -461,8 +423,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `rex_media_manager_type`;
 CREATE TABLE `rex_media_manager_type` (
-  `id` int unsigned NOT NULL AUTO_INCREMENT,
-  `status` int unsigned NOT NULL,
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `status` int(10) unsigned NOT NULL,
   `name` varchar(255) NOT NULL,
   `description` varchar(255) NOT NULL,
   `createdate` datetime NOT NULL,
@@ -471,7 +433,7 @@ CREATE TABLE `rex_media_manager_type` (
   `updateuser` varchar(255) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `name` (`name`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 
 LOCK TABLES `rex_media_manager_type` WRITE;
 /*!40000 ALTER TABLE `rex_media_manager_type` DISABLE KEYS */;
@@ -488,17 +450,17 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `rex_media_manager_type_effect`;
 CREATE TABLE `rex_media_manager_type_effect` (
-  `id` int unsigned NOT NULL AUTO_INCREMENT,
-  `type_id` int unsigned NOT NULL,
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `type_id` int(10) unsigned NOT NULL,
   `effect` varchar(255) NOT NULL,
   `parameters` text NOT NULL,
-  `priority` int unsigned NOT NULL,
+  `priority` int(10) unsigned NOT NULL,
   `createdate` datetime NOT NULL,
   `createuser` varchar(255) NOT NULL,
   `updatedate` datetime NOT NULL,
   `updateuser` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
 
 LOCK TABLES `rex_media_manager_type_effect` WRITE;
 /*!40000 ALTER TABLE `rex_media_manager_type_effect` DISABLE KEYS */;
@@ -520,25 +482,25 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `rex_metainfo_field`;
 CREATE TABLE `rex_metainfo_field` (
-  `id` int unsigned NOT NULL AUTO_INCREMENT,
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `title` varchar(255) DEFAULT NULL,
   `name` varchar(255) DEFAULT NULL,
-  `priority` int unsigned NOT NULL,
+  `priority` int(10) unsigned NOT NULL,
   `attributes` text NOT NULL,
-  `type_id` int unsigned DEFAULT NULL,
+  `type_id` int(10) unsigned DEFAULT NULL,
   `default` varchar(255) NOT NULL,
-  `params` text,
-  `validate` text,
-  `callback` text,
-  `restrictions` text,
-  `templates` text,
+  `params` text DEFAULT NULL,
+  `validate` text DEFAULT NULL,
+  `callback` text DEFAULT NULL,
+  `restrictions` text DEFAULT NULL,
+  `templates` text DEFAULT NULL,
   `createdate` datetime NOT NULL,
   `createuser` varchar(255) NOT NULL,
   `updatedate` datetime NOT NULL,
   `updateuser` varchar(255) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `name` (`name`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
 
 LOCK TABLES `rex_metainfo_field` WRITE;
 /*!40000 ALTER TABLE `rex_metainfo_field` DISABLE KEYS */;
@@ -558,12 +520,12 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `rex_metainfo_type`;
 CREATE TABLE `rex_metainfo_type` (
-  `id` int unsigned NOT NULL AUTO_INCREMENT,
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `label` varchar(255) DEFAULT NULL,
   `dbtype` varchar(255) NOT NULL,
-  `dblength` int NOT NULL,
+  `dblength` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
 
 LOCK TABLES `rex_metainfo_type` WRITE;
 /*!40000 ALTER TABLE `rex_metainfo_type` DISABLE KEYS */;
@@ -586,7 +548,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `rex_module`;
 CREATE TABLE `rex_module` (
-  `id` int unsigned NOT NULL AUTO_INCREMENT,
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `key` varchar(191) DEFAULT NULL,
   `name` varchar(255) NOT NULL,
   `output` mediumtext NOT NULL,
@@ -595,11 +557,11 @@ CREATE TABLE `rex_module` (
   `createuser` varchar(255) NOT NULL,
   `updatedate` datetime NOT NULL,
   `updateuser` varchar(255) NOT NULL,
-  `attributes` text,
-  `revision` int unsigned NOT NULL,
+  `attributes` text DEFAULT NULL,
+  `revision` int(10) unsigned NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `key` (`key`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
 
 LOCK TABLES `rex_module` WRITE;
 /*!40000 ALTER TABLE `rex_module` DISABLE KEYS */;
@@ -619,30 +581,22 @@ INSERT INTO `rex_module` VALUES
 /*!40000 ALTER TABLE `rex_module` ENABLE KEYS */;
 UNLOCK TABLES;
 
-DROP TABLE IF EXISTS `rex_module_action`;
-CREATE TABLE `rex_module_action` (
-  `id` int unsigned NOT NULL AUTO_INCREMENT,
-  `module_id` int unsigned NOT NULL,
-  `action_id` int unsigned NOT NULL,
-  `revision` int unsigned NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 DROP TABLE IF EXISTS `rex_template`;
 CREATE TABLE `rex_template` (
-  `id` int unsigned NOT NULL AUTO_INCREMENT,
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `key` varchar(191) DEFAULT NULL,
   `name` varchar(255) DEFAULT NULL,
-  `content` mediumtext,
+  `content` mediumtext DEFAULT NULL,
   `active` tinyint(1) DEFAULT NULL,
   `createdate` datetime NOT NULL,
-  `attributes` text,
-  `revision` int NOT NULL,
+  `attributes` text DEFAULT NULL,
+  `revision` int(11) NOT NULL,
   `createuser` varchar(255) NOT NULL,
   `updatedate` datetime NOT NULL,
   `updateuser` varchar(255) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `key` (`key`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 
 LOCK TABLES `rex_template` WRITE;
 /*!40000 ALTER TABLE `rex_template` DISABLE KEYS */;
@@ -658,17 +612,4 @@ INSERT INTO `rex_template` VALUES
 /*!40000 ALTER TABLE `rex_template` ENABLE KEYS */;
 UNLOCK TABLES;
 
-DROP TABLE IF EXISTS `rex_user_role`;
-CREATE TABLE `rex_user_role` (
-  `id` int unsigned NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) DEFAULT NULL,
-  `description` text,
-  `perms` text NOT NULL,
-  `createdate` datetime NOT NULL,
-  `revision` int unsigned NOT NULL,
-  `createuser` varchar(255) NOT NULL,
-  `updatedate` datetime NOT NULL,
-  `updateuser` varchar(255) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 SET FOREIGN_KEY_CHECKS = 1;
