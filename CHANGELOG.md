@@ -1,13 +1,13 @@
 # REDAXO Demo Onepage - Changelog
 
-## Version 1.7.4 – 13.06.2023
+## Version 1.8.0 – 14.06.2023
 
 * Neue Console-Commands zur Erstellung der Demo-Exporte @aeberhard
   * `demo_onepage:dump_tables`, erstellt Datenbank-Backup `backups/demo_onepage.utf8.sql`
   * beim Datenbank-Backup werden nur die benötigten Tabellen exportiert
   * `demo_onepage:dump_files`, erstellt Datei-Backup `backups/demo_onepage.tar.gz`
 * Demo-Backups mit den Console-Commands neu erstellt
-* Kleiner Typo korrigiert
+* Kleiner Typo auf der Startseite korrigiert
 * Ordner `media` bei Deinstallation leeren
 * Ordner `resources` bei Deinstallation löschen
 
