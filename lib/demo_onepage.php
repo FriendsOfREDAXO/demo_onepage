@@ -1,9 +1,61 @@
 <?php
-
 class rex_demo_onepage {
+
+    /** @var string[] */
+    private const EXPDIR = [
+        'media', 'resources'
+    ];
+
+    /**
+     * @return array<string>
+     */
+    public static function dump_files(): array
+    {
+
+        $addon = rex_addon::get('demo_onepage');
+        $exportPath = $addon->getPath('backups') . DIRECTORY_SEPARATOR  . 'demo_onepage.tar.gz';
+
+        rex_backup::exportFiles(self::EXPDIR, $exportPath);
+
+        return [];
+    }
+
+    /**
+     * @return array<string>
+     */
+    public static function dump_tables(): array
+    {
+        $addon = rex_addon::get('demo_onepage');
+        $exportPath = $addon->getPath('backups') . DIRECTORY_SEPARATOR  . 'demo_onepage.utf8.sql';
+        $error = [];
+
+        $EXPTABLES = [
+            rex::getTable('article'),
+            rex::getTable('article_slice'),
+            rex::getTable('clang'),
+            rex::getTable('config'),
+            rex::getTable('markitup_profiles'),
+            rex::getTable('media'),
+            rex::getTable('media_category'),
+            rex::getTable('media_manager_type'),
+            rex::getTable('media_manager_type_effect'),
+            rex::getTable('metainfo_field'),
+            rex::getTable('metainfo_type'),
+            rex::getTable('module'),
+            rex::getTable('template'),
+        ];
+
+        $hasContent = rex_backup::exportDb($exportPath, $EXPTABLES);
+        if (false === $hasContent) {
+            $error[] = rex_i18n::msg('backup_file_could_not_be_generated') . ' ' . $exportPath;
+        }
+
+        return $error;
+    }
+
     public static function install() {
         $addon = rex_addon::get('demo_onepage');
-        
+
         // in some cases rex_addon has the old package.yml in cache. But we need our new merged package.yml
         $addon->loadProperties();
 
