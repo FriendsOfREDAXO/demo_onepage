@@ -1,5 +1,17 @@
 # REDAXO Demo Onepage - Changelog
 
+## Version 1.7.4 – 13.06.2023
+
+* Neue Console-Commands zur Erstellung der Demo-Exporte @aeberhard
+  * `demo_onepage:dump_tables`, erstellt Datenbank-Backup `backups/demo_onepage.utf8.sql`
+  * beim Datenbank-Backup werden nur die benötigten Tabellen exportiert
+  * `demo_onepage:dump_files`, erstellt Datei-Backup `backups/demo_onepage.tar.gz`
+* Demo-Backups mit den Console-Commands neu erstellt
+* Kleiner Typo korrigiert
+* Ordner `media` bei Deinstallation leeren
+* Ordner `resources` bei Deinstallation löschen
+
+
 ## Version 1.7.3 – 10.06.2023
 
 ### Features
@@ -8,7 +20,7 @@
   * markitup 3.7.3 -> 3.7.4
   * mblock 3.4.7 -> 3.4.12
 * PHP-Version in package.yml >=7.4, <8.3
- 
+
 ### Bugfixes
 
 * Bei Deinstallation Backup-Daten aus dem Backup-Ordner löschen - https://github.com/FriendsOfREDAXO/demo_onepage/issues/38 @aeberhard
