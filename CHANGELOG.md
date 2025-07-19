@@ -1,5 +1,12 @@
 # REDAXO Demo Onepage - Changelog
 
+## Version 1.9.0 - 19.07.2025
+
+### Features
+
+* Ermöglicht die Nutzung mit PHP 8.3+
+
+
 ## Version 1.8.0 – 14.06.2023
 
 ### Neu
