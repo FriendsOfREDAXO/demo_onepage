@@ -1,5 +1,11 @@
 # REDAXO Demo Onepage - Changelog
 
+## Version 1.10.0 – 30.08.2025
+
+* Umstellung auf FOR-Namespace
+* Console-Commands in package.yml an FOR-Namespace angepasst
+
+
 ## Version 1.9.0 - 19.07.2025
 
 ### Features

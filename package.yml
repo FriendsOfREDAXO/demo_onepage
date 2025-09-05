@@ -1,5 +1,5 @@
 package: demo_onepage
-version: 1.9.0
+version: 1.10.0
 author: 'Friends Of REDAXO'
 supportpage: 'https://github.com/FriendsOfREDAXO/demo_onepage'
 page:
@@ -23,6 +23,6 @@ requires:
     php: '>=8.0'
 
 console_commands:
-    'demo_onepage:install': rex_command_demo_onepage_install
-    'demo_onepage:dump_files': rex_command_demo_onepage_dumpfiles
-    'demo_onepage:dump_tables': rex_command_demo_onepage_dumptables
+    'demo_onepage:install': FriendsOfRedaxo\DemoOnepage\rex_command_demo_onepage_install
+    'demo_onepage:dump_files': FriendsOfRedaxo\DemoOnepage\rex_command_demo_onepage_dumpfiles
+    'demo_onepage:dump_tables': FriendsOfRedaxo\DemoOnepage\rex_command_demo_onepage_dumptables
